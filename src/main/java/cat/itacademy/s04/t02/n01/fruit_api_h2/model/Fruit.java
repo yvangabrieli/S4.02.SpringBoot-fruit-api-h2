@@ -1,0 +1,26 @@
+package cat.itacademy.s04.t02.n01.fruit_api_h2.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter
+@Setter
+
+public class Fruit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private int weightInKilos;
+
+    protected Fruit() {
+    }
+
+    public Fruit(String name, int weightInKilos) {
+        this.name = name;
+        this.weightInKilos = weightInKilos;
+    }
+}
+
+
