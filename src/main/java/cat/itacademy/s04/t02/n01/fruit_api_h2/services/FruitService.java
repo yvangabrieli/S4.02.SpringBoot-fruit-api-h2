@@ -13,5 +13,4 @@ public interface FruitService {
     Fruit getFruitById(Long id);
     Fruit updateFruit(Long id, Fruit fruit);
     void deleteFruit(Long id);
-
 }
