@@ -5,7 +5,6 @@ import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.repository.FruitRepository;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.validator.FruitValidator;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
