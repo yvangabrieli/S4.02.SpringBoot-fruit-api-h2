@@ -4,14 +4,10 @@ import lombok.*;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class FruitResponseDTO {
     private Long id;
     private String name;
     private int weightInKilos;
 
-    public FruitResponseDTO(Long id, String name, int weightInKilos) {
-        this.id = id;
-        this.name = name;
-        this.weightInKilos = weightInKilos;
-    }
 }

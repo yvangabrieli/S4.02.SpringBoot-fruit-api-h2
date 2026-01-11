@@ -7,18 +7,12 @@ import lombok.*;
 
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class FruitRequestDTO {
     @NotBlank(message = "Fruit name cannot be blank")
     private String name;
     @Positive(message = "Fruit weight must be positive")
     private int weightInKilos;
-
-    public FruitRequestDTO() {
-    }
-
-    public FruitRequestDTO(String name, int weightInKilos) {
-        this.name = name;
-        this.weightInKilos = weightInKilos;
-    }
 }
