@@ -115,68 +115,58 @@ H2 Database
 - **Exception**: Centralized error handling
 
 ---
-
 ## 🌐 Endpoints
 
 Base URL: `http://localhost:9000`
 
 ### Create Fruit
-`POST /fruits`
+
+**POST /fruits**
 
 ```json
 {
   "name": "Apple",
-  "weightInKilos": 2
+  "weightInKilos": 5
 }
-
-
-
 Response: 201 Created
 
 Get All Fruits
-
 GET /fruits
 
 Response: 200 OK
 
 Get Fruit by ID
-
 GET /fruits/{id}
 
 Response: 200 OK
 Error: 404 Not Found
 
 Update Fruit
-
 PUT /fruits/{id}
 
-```json
+json
+Copiar código
 {
   "name": "Green Apple",
   "weightInKilos": 10
 }
-
-
 Response: 200 OK
 
 Delete Fruit
-
 DELETE /fruits/{id}
 
 Response: 204 No Content
 
 Health Check
-
 GET /actuator/health
-´´´md
 
+json
+Copiar código
 {
   "status": "UP"
 }
-
 🚀 Installation
 Prerequisites
-
 Java 21
 
 Maven 3.9+
@@ -184,49 +174,60 @@ Maven 3.9+
 Docker (optional)
 
 Clone Project
+bash
+Copiar código
 git clone https://github.com/yvangabrieli/S4.02.SpringBoot-fruit-api-h2
-
+cd S4.02.SpringBoot-fruit-api-h2
 Build
+bash
+Copiar código
 mvn clean install
-
 ▶️ Execution
 Run with Maven
+bash
+Copiar código
 mvn spring-boot:run
-
 Run JAR
+bash
+Copiar código
 java -jar target/fruit-api-h2-0.0.1.jar
-
 Verify
+bash
+Copiar código
 curl http://localhost:9000/actuator/health
-
 🧪 Tests
-
 The project follows Outside-In TDD.
 
 Run Tests
+bash
+Copiar código
 mvn test
-
 Test Types
-
 Controller integration tests
 
 Service unit tests
 
+Validator tests
+
+Mapper tests
 
 🐳 Docker
 Dockerfile (Multi-Stage Build)
-
 Stage 1: Build the JAR using Maven
 
 Stage 2: Run with a lightweight JRE image
 
 Build Image
+bash
+Copiar código
 docker build -t fruit-api:1.0 .
-
 Run Container
+bash
+Copiar código
 docker run -p 9000:9000 fruit-api:1.0
-
 📁 Project Structure
+bash
+Copiar código
 fruit-api-h2/
 ├── src/
 │   ├── main/
@@ -247,30 +248,29 @@ fruit-api-h2/
 ├── Dockerfile
 ├── pom.xml
 └── README.md
-
 ✅ Validations
 Bean Validation
+java
+Copiar código
 @NotBlank
 private String name;
 
 @Positive
 private int weightInKilos;
-
 Custom Validator
-
 The validator layer contains domain-specific validation logic that complements Bean Validation and ensures business rules are respected before persistence.
 
 ⚠️ Error Handling
-
 Centralized error handling using @RestControllerAdvice.
 
 Error Response Format
+json
+Copiar código
 {
   "status": 404,
   "message": "Fruit not found with id: 10",
   "timestamp": "2026-01-10T10:30:00"
 }
-
 HTTP Status Codes
 Code	Meaning
 200	OK
@@ -281,8 +281,9 @@ Code	Meaning
 500	Internal Server Error
 
 🔧 Configuration
-
 application.properties
+properties
+Copiar código
 spring.datasource.url=jdbc:h2:mem:fruitdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
