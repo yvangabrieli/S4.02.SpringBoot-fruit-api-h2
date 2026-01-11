@@ -149,7 +149,7 @@ Error: 404 Not Found
 Update Fruit
 
 PUT /fruits/{id}
-```md
+
 ```json
 {
   "name": "Green Apple",
