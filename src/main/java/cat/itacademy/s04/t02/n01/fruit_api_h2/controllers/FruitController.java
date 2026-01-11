@@ -2,6 +2,7 @@ package cat.itacademy.s04.t02.n01.fruit_api_h2.controllers;
 
 import cat.itacademy.s04.t02.n01.fruit_api_h2.dto.FruitRequestDTO;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.dto.FruitResponseDTO;
+import cat.itacademy.s04.t02.n01.fruit_api_h2.mapper.FruitMapper;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.services.FruitService;
 import jakarta.validation.Valid;
@@ -12,43 +13,38 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
+
 @RestController
 @RequestMapping("/fruits")
 public class FruitController {
     private final FruitService service;
+    private final FruitMapper mapper;
 
-    public FruitController(FruitService service) {
+    public FruitController(FruitService service, FruitMapper mapper) {
         this.service = service;
+        this.mapper = mapper;
     }
 
     @PostMapping
     public ResponseEntity<FruitResponseDTO> createFruit(@Valid @RequestBody FruitRequestDTO dto) {
-        Fruit fruit = new Fruit(dto.getName(), dto.getWeightInKilos());
-        Fruit saved = service.createFruit(fruit);
+        Fruit saved = service.createFruit(mapper.toEntity(dto));
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(new FruitResponseDTO(
-                        saved.getId(),
-                        saved.getName(),
-                        saved.getWeightInKilos()));
+                .body(mapper.toDTO(saved));
     }
 
     @GetMapping
     public List<FruitResponseDTO> getALl() {
         return service.getAllFruits()
                 .stream()
-                .map(f -> new FruitResponseDTO(
-                        f.getId(), f.getName(), f.getWeightInKilos()))
+                .map(mapper::toDTO)
                 .toList();
     }
 
     @GetMapping("/{id}")
     public FruitResponseDTO getById(@PathVariable Long id) {
         Fruit fruit = service.getFruitById(id);
-        return new FruitResponseDTO(
-                fruit.getId(),
-                fruit.getName(),
-                fruit.getWeightInKilos());
+        return mapper.toDTO(fruit);
     }
 
     @PutMapping("/{id}")
@@ -57,11 +53,8 @@ public class FruitController {
             @Valid @RequestBody FruitRequestDTO dto) {
         Fruit updated = service.updateFruit(
                 id,
-                new Fruit(dto.getName(), dto.getWeightInKilos()));
-        return new FruitResponseDTO(
-                updated.getId(),
-                updated.getName(),
-                updated.getWeightInKilos());
+                mapper.toEntity(dto));
+        return mapper.toDTO(updated);
     }
 
     @DeleteMapping("/{id}")
