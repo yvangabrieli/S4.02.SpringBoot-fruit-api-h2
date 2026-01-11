@@ -223,21 +223,22 @@ fruit-api-h2/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── cat/itacademy/s04/t02/n01/
-│   │   │       ├── controllers
-│   │   │       ├── services
-│   │   │       ├── repository
-│   │   │       ├── model
-│   │   │       ├── dto
-│   │   │       ├── mapper
-│   │   │       ├── validator
-│   │   │       └── exceptions
+│   │   │       ├── controllers      # REST controllers
+│   │   │       ├── services         # Business logic
+│   │   │       ├── repository       # JPA Repositories
+│   │   │       ├── model            # JPA Entities
+│   │   │       ├── dto              # Request/Response DTOs
+│   │   │       ├── mapper           # Entity ↔ DTO mapping
+│   │   │       ├── validator        # Domain validation
+│   │   │       └── exceptions       # Exception handling
 │   │   └── resources/
 │   │       └── application.properties
 │   └── test/
 │       └── java/
-├── Dockerfile
-├── pom.xml
-└── README.md
+├── Dockerfile                        # Multi-stage Docker build
+├── pom.xml                            # Maven configuration
+└── README.md                          # Project documentation
+
 
 ---
 ## ✅ Validations
