@@ -5,6 +5,8 @@ import lombok.*;
 
 @Entity
 @Table(name = "fruits")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Getter
 @Setter
 public class Fruit {
@@ -14,10 +16,7 @@ public class Fruit {
     private String name;
     private int weightInKilos;
 
-    protected Fruit() {
-    }
-
-    public Fruit(String name, int weightInKilos) {
+    public Fruit (String name, int weightInKilos){
         this.name = name;
         this.weightInKilos = weightInKilos;
     }
