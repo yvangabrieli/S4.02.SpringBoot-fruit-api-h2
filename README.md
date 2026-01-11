@@ -220,43 +220,44 @@ docker run -p 9000:9000 fruit-api:1.0
 
 fruit-api-h2/
 
----- src/
+├── src/
 
------- main/
+│   ├── main/
 
--------- java/
+│   │   ├── java/
 
----------- cat/itacademy/s04/t02/n01/
+│   │   │   └── cat/itacademy/s04/t02/n01/
 
----------- controllers # REST controllers
+│   │   │       ├── controllers      # REST controllers
 
----------- services # Business logic
+│   │   │       ├── services         # Business logic
 
----------- repository # JPA Repositories
+│   │   │       ├── repository       # JPA Repositories
 
----------- model # JPA Entities
+│   │   │       ├── model            # JPA Entities
 
----------- dto # Request/Response DTOs
+│   │   │       ├── dto              # Request/Response DTOs
 
----------- mapper # Entity ↔ DTO mapping
+│   │   │       ├── mapper           # Entity ↔ DTO mapping
 
----------- validator # Domain validation
+│   │   │       ├── validator        # Domain validation
 
----------- exceptions # Exception handling
+│   │   │       └── exceptions       # Exception handling
 
-------- resources/
+│   │   └── resources/
 
--------- application.properties
+│   │       └── application.properties
 
-------test/
+│   └── test/
 
-------java/
+│       └── java/
 
----- Dockerfile # Multi-stage Docker build
+├── Dockerfile                        # Multi-stage Docker build
 
----- pom.xml # Maven configuration
+├── pom.xml                            # Maven configuration
 
----- README.md # Project documentation
+└── README.md                          # Project documentation
+
 
 
 ---
