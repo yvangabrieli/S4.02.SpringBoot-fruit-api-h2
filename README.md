@@ -168,6 +168,7 @@ Response: 204 No Content
 Health Check
 
 GET /actuator/health
+´´´md
 
 {
   "status": "UP"
