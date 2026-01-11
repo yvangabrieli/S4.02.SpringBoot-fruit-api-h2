@@ -126,8 +126,9 @@ Base URL: `http://localhost:9000`
 ```json
 {
   "name": "Apple",
-  "weightInKilos": 5
+  "weightInKilos": 2
 }
+
 
 
 Response: 201 Created
@@ -148,7 +149,8 @@ Error: 404 Not Found
 Update Fruit
 
 PUT /fruits/{id}
-
+```md
+```json
 {
   "name": "Green Apple",
   "weightInKilos": 10
