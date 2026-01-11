@@ -1,5 +1,6 @@
 package cat.itacademy.s04.t02.n01.fruit_api_h2.services;
 
+import cat.itacademy.s04.t02.n01.fruit_api_h2.exception.BusinessRuleException;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.exception.FruitNotFoundException;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
 import cat.itacademy.s04.t02.n01.fruit_api_h2.repository.FruitRepository;
@@ -20,6 +21,10 @@ public class FruitServiceImpl implements FruitService {
     @Override
     public Fruit createFruit(Fruit fruit) {
         validator.validate(fruit);
+
+        if (repository.existsByName(fruit.getName())) {
+            throw new BusinessRuleException("A fruit with the name '" + fruit.getName() + "' already exists");
+        }
         return repository.save(fruit);
     }
 
@@ -34,11 +39,11 @@ public class FruitServiceImpl implements FruitService {
     }
 
     @Override
-    public Fruit updateFruit(Long id, Fruit fruit) {
+    public Fruit updateFruit(Long id, Fruit newData) {
         Fruit existing = getFruitById(id);
-        validator.validate(fruit);
-        existing.setName(fruit.getName());
-        existing.setWeightInKilos(fruit.getWeightInKilos());
+        validator.validate(newData);
+        existing.setName(newData.getName());
+        existing.setWeightInKilos(newData.getWeightInKilos());
         return repository.save(existing);
     }
 
