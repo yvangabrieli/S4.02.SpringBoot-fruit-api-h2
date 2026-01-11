@@ -123,7 +123,7 @@ Base URL: `http://localhost:9000`
 
 **POST /fruits**
 
-```json
+
 {
   "name": "Apple",
   "weightInKilos": 5
@@ -144,8 +144,7 @@ Error: 404 Not Found
 Update Fruit
 PUT /fruits/{id}
 
-json
-Copiar código
+
 {
   "name": "Green Apple",
   "weightInKilos": 10
