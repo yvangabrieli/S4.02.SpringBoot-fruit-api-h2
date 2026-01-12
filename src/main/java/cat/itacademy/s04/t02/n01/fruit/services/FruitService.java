@@ -1,8 +1,6 @@
-package cat.itacademy.s04.t02.n01.fruit_api_h2.services;
+package cat.itacademy.s04.t02.n01.fruit.services;
 
-import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.repository.FruitRepository;
-import org.springframework.stereotype.Service;
+import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
 
 import java.util.List;
 

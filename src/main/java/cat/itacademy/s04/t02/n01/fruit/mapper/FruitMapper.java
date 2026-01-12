@@ -1,8 +1,8 @@
-package cat.itacademy.s04.t02.n01.fruit_api_h2.mapper;
+package cat.itacademy.s04.t02.n01.fruit.mapper;
 
-import cat.itacademy.s04.t02.n01.fruit_api_h2.dto.FruitRequestDTO;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.dto.FruitResponseDTO;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
+import cat.itacademy.s04.t02.n01.fruit.dto.FruitRequestDTO;
+import cat.itacademy.s04.t02.n01.fruit.dto.FruitResponseDTO;
+import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
 import org.springframework.stereotype.Component;
 
 @Component

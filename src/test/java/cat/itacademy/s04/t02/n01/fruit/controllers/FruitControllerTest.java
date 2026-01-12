@@ -1,10 +1,9 @@
-package cat.itacademy.s04.t02.n01.fruit_api_h2.controllers;
+package cat.itacademy.s04.t02.n01.fruit.controllers;
 
-import cat.itacademy.s04.t02.n01.fruit_api_h2.dto.FruitRequestDTO;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.dto.FruitResponseDTO;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.mapper.FruitMapper;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.services.FruitService;
+import cat.itacademy.s04.t02.n01.fruit.dto.FruitRequestDTO;
+import cat.itacademy.s04.t02.n01.fruit.mapper.FruitMapper;
+import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
+import cat.itacademy.s04.t02.n01.fruit.services.FruitService;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.boot.test.mock.mockito.MockBean;

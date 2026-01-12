@@ -1,9 +1,9 @@
-package cat.itacademy.s04.t02.n01.fruit_api_h2.services;
+package cat.itacademy.s04.t02.n01.fruit.services;
 
-import cat.itacademy.s04.t02.n01.fruit_api_h2.exception.FruitNotFoundException;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.repository.FruitRepository;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.validator.FruitValidator;
+import cat.itacademy.s04.t02.n01.fruit.exception.FruitNotFoundException;
+import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
+import cat.itacademy.s04.t02.n01.fruit.repository.FruitRepository;
+import cat.itacademy.s04.t02.n01.fruit.validator.FruitValidator;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

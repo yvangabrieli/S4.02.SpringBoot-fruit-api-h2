@@ -1,7 +1,6 @@
-package cat.itacademy.s04.t02.n01.fruit_api_h2.dto;
+package cat.itacademy.s04.t02.n01.fruit.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 

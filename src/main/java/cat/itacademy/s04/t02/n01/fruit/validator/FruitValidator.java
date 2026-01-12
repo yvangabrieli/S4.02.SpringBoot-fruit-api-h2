@@ -1,7 +1,7 @@
-package cat.itacademy.s04.t02.n01.fruit_api_h2.validator;
+package cat.itacademy.s04.t02.n01.fruit.validator;
 
-import cat.itacademy.s04.t02.n01.fruit_api_h2.exception.BusinessRuleException;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
+import cat.itacademy.s04.t02.n01.fruit.exception.BusinessRuleException;
+import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
 import org.springframework.stereotype.Component;
 
 @Component

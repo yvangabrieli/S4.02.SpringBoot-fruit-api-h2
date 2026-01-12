@@ -1,7 +1,7 @@
-package cat.itacademy.s04.t02.n01.fruit_api_h2.repository;
+package cat.itacademy.s04.t02.n01.fruit.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import cat.itacademy.s04.t02.n01.fruit_api_h2.model.Fruit;
+import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
 
 public interface FruitRepository extends JpaRepository<Fruit, Long> {
     boolean existsByName(String name);
