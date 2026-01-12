@@ -4,7 +4,7 @@ import cat.itacademy.s04.t02.n01.fruit.dto.FruitRequestDTO;
 import cat.itacademy.s04.t02.n01.fruit.dto.FruitResponseDTO;
 import cat.itacademy.s04.t02.n01.fruit.mapper.FruitMapper;
 import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
-import cat.itacademy.s04.t02.n01.fruit.services.FruitService;
+import cat.itacademy.s04.t02.n01.fruit.service.FruitService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

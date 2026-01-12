@@ -3,7 +3,7 @@ package cat.itacademy.s04.t02.n01.fruit.controllers;
 import cat.itacademy.s04.t02.n01.fruit.dto.FruitRequestDTO;
 import cat.itacademy.s04.t02.n01.fruit.mapper.FruitMapper;
 import cat.itacademy.s04.t02.n01.fruit.model.Fruit;
-import cat.itacademy.s04.t02.n01.fruit.services.FruitService;
+import cat.itacademy.s04.t02.n01.fruit.service.FruitService;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.boot.test.mock.mockito.MockBean;
